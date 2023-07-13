@@ -1,0 +1,26 @@
+<div class="draggable-fields__form">
+    <h2>Select Items</h2>
+    <div class="drag-items-list">
+      <app-input-field id="input" cdkDrag [cdkDragData]="data.input" cdkDragBoundary=".form-builder-field"
+                       [field]="field$|async" [formField]="showForm"
+      ></app-input-field>
+      <app-textarea-field id="textarea"  cdkDrag [cdkDragData]="data.textarea" cdkDragBoundary=".form-builder-field"
+                          [field]="field$|async" [formField]="showForm"
+      ></app-textarea-field>
+      <app-button-field id="button"  cdkDrag [cdkDragData]="data.button" cdkDragBoundary=".form-builder-field"
+                        [field]="field$|async"
+      ></app-button-field>
+      <app-checkbox-field id="checkbox" cdkDrag [cdkDragData]="data.checkbox" cdkDragBoundary=".form-builder-field"
+                          [field]="field$|async" [formField]="showForm"
+      ></app-checkbox-field>
+      <app-select-field id="select" cdkDrag [cdkDragData]="data.select" cdkDragBoundary=".form-builder-field"
+                        [field]="field$|async" [formField]="showForm"
+                        [options]="[
+    {value: 'option1',text: 'option 1'},
+    {value: 'option2',text: 'option 2'},
+    {value: 'option3',text: 'option 3'},
+    ]"
+      ></app-select-field>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+<form [formGroup]="form_result" class="form-result" (ngSubmit)="onSubmit()">
+    <h2>{{form_result?.get('form_label')?.value}} <span>last update: {{updatedAt|date: 'medium'}}</span></h2>
+    <div class="form" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="formCopy|ngrxPush">
+        <div *ngFor="let field of formCopy|ngrxPush" cdkDrag cdkDragBoundary=".form-result" [cdkDragStartDelay]="500">
+          <app-form-dynamic [field]="field"
+                            [form_result]="form_result"
+                            [removeField]="removeField"
+                            [setEditMode]="setEditMode"
+          ></app-form-dynamic>
+        </div>
+    </div>
+
+    <div class="submit">
+      <button type="submit" [disabled]="form_result?.invalid" mat-raised-button color="primary">{{'send'|upperCase}}</button>
+    </div>
+</form>
+

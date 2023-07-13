@@ -1,0 +1,21 @@
+<div>
+  <mat-card style="padding: 10px; display: flex; justify-content: center; ">
+    <div class="drag-item" [formGroup]="formField" *ngIf="formField">
+      <label>{{field?.options?.label}}</label>
+      <select
+        [formControl]="formField?.get(field?.options?.label)" required="{{field?.options?.required}}"
+        [ngStyle]="{
+          'width': field?.options?.styles?.width,
+          'height': field?.options?.styles?.height,
+          'font-size': field?.options?.styles?.fontSize,
+          'font-weight': field?.options?.styles?.fontWeight,
+          'color': field?.options?.styles?.color
+        }"
+      >
+        <ng-container *ngFor="let option of options">
+          <option [value]="option.value">{{option.text}}</option>
+        </ng-container>
+      </select>
+    </div>
+  </mat-card>
+</div>

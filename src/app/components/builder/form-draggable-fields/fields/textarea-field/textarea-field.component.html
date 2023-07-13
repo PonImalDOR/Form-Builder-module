@@ -1,0 +1,18 @@
+<div>
+  <mat-card>
+    <div class="drag-item" [formGroup]="formField" *ngIf="formField">
+      <label>{{field?.options?.label}}</label>
+      <textarea
+        [formControl]="formField?.get(field?.options?.label)" required="{{field?.options?.required}}"
+        [placeholder]=field?.options?.placeholder
+        [ngStyle]="{
+             'width': field?.options?.styles?.width,
+             'height': field?.options?.styles?.height,
+             'border-style': field?.options?.styles?.borderStyle,
+             'font-size': field?.options?.styles?.fontSize,
+             'font-weight': field?.options?.styles?.fontWeight,
+             'color': field?.options?.styles?.color}"
+      ></textarea>
+    </div>
+  </mat-card>
+</div>

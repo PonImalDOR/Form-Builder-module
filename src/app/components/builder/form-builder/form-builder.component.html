@@ -1,0 +1,39 @@
+<div class="form-builder">
+
+  <section id="form-accordion" style="width: 100%; max-width: 250px;"></section>
+
+  <div class="form-builder-field">
+    <div class="form-builder-result">
+      <section id="form-creator"></section>
+    </div>
+    <section id="draggable-fields"></section>
+  </div>
+</div>
+
+
+<div class="render_fields" cdkDropList [cdkDropListData]="data" (cdkDropListDropped)="drop($event)">
+  <app-form-accordion-portal>
+   <app-form-accordion
+                      [isEdit]="isEdit$|ngrxPush"
+                      [activeField]="activeField$|ngrxPush"
+                      [addField]="addField"
+                      [editField]="editField"
+                      [editFieldLabel]="editFieldLabel$|ngrxPush"
+                      [form_result]="form_result"></app-form-accordion>
+  </app-form-accordion-portal>
+
+  <app-form-creator-portal>
+    <app-form-creator
+    [updatedAt]="updatedAt$|ngrxPush"
+    [form_result]="form_result"
+    [form$]="form$"
+    [removeField]="removeField"
+    [setEditMode]="setEditMode"></app-form-creator>
+  </app-form-creator-portal>
+
+  <app-draggable-fields-portal>
+    <app-form-draggable-fields></app-form-draggable-fields>
+  </app-draggable-fields-portal>
+</div>
+
+

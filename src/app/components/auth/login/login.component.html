@@ -1,0 +1,32 @@
+<div class="login-form">
+  <h2>Login</h2>
+  <mat-card style="max-width: 400px;">
+    <form [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          style="border: none">
+      <app-auth-input
+        formControlName="username"
+        [label]="'Username'"
+        [placeholder]="'Enter Username'"
+        [tagId]="'username'"
+        [required]="true"
+      ></app-auth-input>
+      <br>
+      <app-auth-input
+        formControlName="password"
+        [label]="'Password'"
+        [placeholder]="'Enter Password'"
+        [tagId]="'password'"
+        [type]="'password'"
+        [required]="true"
+      ></app-auth-input>
+      <br>
+      <button mat-raised-button color="primary" style="width: 100%" [disabled]="loginForm.invalid || loginForm.disabled">Submit</button>
+    </form>
+      <p style="padding-top: 15px;" (click)="toRegisterPage()">Do not have account?
+        <span style="cursor: pointer; color: #4a24c7; text-decoration: underline">Register</span>
+      </p>
+  </mat-card>
+</div>
+
+

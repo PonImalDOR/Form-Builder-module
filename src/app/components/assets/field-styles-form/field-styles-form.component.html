@@ -1,0 +1,52 @@
+<div class="form-style">
+  <p>current field is => {{activeField | ngrxPush}}</p>
+  <form [formGroup]="styleForm" class="form-style-control" (ngSubmit)="onSubmit()" id="styleForm">
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field label</mat-label>
+      <input matInput formControlName="label" placeholder="label" id="label"/>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field placeholder</mat-label>
+      <input matInput formControlName="placeholder" placeholder="placeholder" id="placeholder"/>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field text</mat-label>
+      <input matInput formControlName="text" placeholder="text" id="text"/>
+    </mat-form-field>
+    <div style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-checkbox formControlName="required" id="required" color="primary"
+      >Required or not</mat-checkbox>
+    </div>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field width</mat-label>
+      <input matInput formControlName="width" placeholder="width" id="width" type="number"/>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field height</mat-label>
+      <input matInput formControlName="height" placeholder="height" id="height" type="number"/>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field font size</mat-label>
+      <input matInput formControlName="fontSize" placeholder="font size" id="fontSize" type="number"/>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field font weight</mat-label>
+      <input matInput formControlName="fontWeight" placeholder="font weight" id="fontWeight" type="number"/>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field border style</mat-label>
+      <mat-select formControlName="borderStyle" id="borderStyle">
+        <ng-container *ngFor="let option of borderStyles | keyvalue">
+          <mat-option style="font-size: 18px" [value]="option.key">{{option.value}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field style="background-color: #fff; padding: 5px; color: #000;">
+      <mat-label>Field color</mat-label>
+      <input matInput formControlName="color" id="color" placeholder="color" [(colorPicker)]="styleForm?.value.color!"/>
+<!--[style.background]="styleForm.value.color"-->
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="styleForm.invalid" style="cursor: pointer">{{'submit'|upperCase}}</button>
+  </form>
+</div>
+

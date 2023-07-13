@@ -1,0 +1,14 @@
+<div class="accordion">
+    <h2>Customize field</h2>
+    <div *ngIf="activeField" style="width: 100%;">
+      <app-field-styles-form [submitForm]="addField" [activeField]="activeField"
+                             style="width: 100%;"></app-field-styles-form>
+    </div>
+    <div *ngIf="isEdit" style="width: 100%;">
+      <app-field-styles-form [submitForm]="editField" style="width: 100%;"
+                             [editFieldLabel]="editFieldLabel!"
+                             [form_result]="form_result"></app-field-styles-form>
+    </div>
+</div>
+
+

@@ -1,0 +1,21 @@
+<div>
+  <mat-card>
+    <div class="drag-item" [formGroup]="formField" *ngIf="formField">
+      <label>{{field?.options?.label}}</label>
+      <span>
+        <input type="checkbox" id="check"
+               [formControl]="formField?.get(field?.options?.label)" required="{{field?.options?.required}}"
+               [ngStyle]="{
+          'width': '25px',
+          'height': '25px'}"
+        />
+        <label for="check"
+               [ngStyle]="{
+            'color': field?.options?.styles?.color,
+            'font-size': field?.options?.styles?.fontSize,
+            'font-weight': field?.options?.styles?.fontWeight}"
+        >{{field?.options?.text}}</label>
+      </span>
+    </div>
+  </mat-card>
+</div>

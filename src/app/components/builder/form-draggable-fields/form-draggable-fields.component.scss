@@ -1,0 +1,13 @@
+.draggable-fields__form {
+  >h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .drag-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+  }
+}

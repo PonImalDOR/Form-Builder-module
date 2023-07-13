@@ -1,0 +1,24 @@
+.form-style {
+  width: 100%;
+  color: #fff;
+  .form-style-control {
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    border-radius: 5px;
+    background-color: #acabab;
+    border: none;
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    select {
+      cursor: pointer;
+    }
+
+  }
+}
+

@@ -1,0 +1,16 @@
+<div>
+  <mat-card>
+    <div class="drag-item">
+      <label>{{field?.options?.label}}</label>
+      <button
+        [ngStyle]="{
+             'width': field?.options?.styles?.width,
+             'height': field?.options?.styles?.height,
+             'border-style': field?.options?.styles?.borderStyle,
+             'font-size': field?.options?.styles?.fontSize,
+             'font-weight': field?.options?.styles?.fontWeight,
+             'color': field?.options?.styles?.color}"
+      >{{field?.options?.text}}</button>
+    </div>
+  </mat-card>
+</div>

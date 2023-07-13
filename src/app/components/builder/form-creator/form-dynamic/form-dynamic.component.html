@@ -1,0 +1,50 @@
+<div [ngSwitch]="field?.name">
+
+  <div *ngSwitchCase="field_name.input" style="position: relative">
+    <div class="icons">
+      <mat-icon (click)="removeField(field?.id, field?.options?.label)">delete</mat-icon>
+      <mat-icon (click)="setEditMode(field?.id, field?.name, field?.options?.label)">edit</mat-icon>
+    </div>
+    <app-input-field [field]="field" [formField]="form_result" ></app-input-field>
+  </div>
+
+  <div *ngSwitchCase="field_name.textarea" style="position: relative">
+    <div class="icons">
+      <mat-icon (click)="removeField(field?.id, field?.options?.label)">delete</mat-icon>
+      <mat-icon (click)="setEditMode(field?.id, field?.name, field?.options?.label)">edit</mat-icon>
+    </div>
+    <app-textarea-field [field]="field" [formField]="form_result"></app-textarea-field>
+  </div>
+
+  <div *ngSwitchCase="field_name.button" style="position: relative">
+    <div class="icons">
+      <mat-icon (click)="removeField(field?.id, field?.options?.label)">delete</mat-icon>
+      <mat-icon (click)="setEditMode(field?.id, field?.name, field?.options?.label)">edit</mat-icon>
+    </div>
+    <app-button-field [field]="field" ></app-button-field>
+  </div>
+
+  <div *ngSwitchCase="field_name.checkbox" style="position: relative">
+    <div class="icons">
+      <mat-icon (click)="removeField(field?.id, field?.options?.label)">delete</mat-icon>
+      <mat-icon (click)="setEditMode(field?.id, field?.name, field?.options?.label)">edit</mat-icon>
+    </div>
+    <app-checkbox-field [field]="field" [formField]="form_result"></app-checkbox-field>
+  </div>
+
+  <div *ngSwitchCase="field_name.select" style="position: relative">
+    <div class="icons">
+      <mat-icon (click)="removeField(field?.id, field?.options?.label)">delete</mat-icon>
+      <mat-icon (click)="setEditMode(field?.id, field?.name, field?.options?.label)">edit</mat-icon>
+    </div>
+    <app-select-field [field]="field" [formField]="form_result"
+                      [options]="[
+    {value: 'option1',text: 'option 1'},
+    {value: 'option2',text: 'option 2'},
+    {value: 'option3',text: 'option 3'},
+    ]"
+    ></app-select-field>
+  </div>
+
+</div>
+

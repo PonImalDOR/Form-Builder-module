@@ -1,0 +1,23 @@
+.wrapper {
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.app-header {
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #4a24c7;
+  min-height: 50px;
+  .header__container {
+    width: 100%;
+    color: #fff;
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+}

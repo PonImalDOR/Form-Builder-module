@@ -1,0 +1,18 @@
+.icons {
+  color: #4a24c7;
+  display: flex;
+  gap: 0 10px;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+  mat-icon {
+    transition: .1s linear;
+    &:hover {
+      transition: .1s linear;
+      color: rgba(74, 36, 199, 0.67);
+    }
+  }
+}
+
